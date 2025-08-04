@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://yy5jyc3s1vqb"
+path="res://.godot/imported/All Right!.wav-7cd4ea75493d36ed6da38fe5d75ffe38.sample"
+
+[deps]
+
+source_file="res://Assets/Wolfenstein/All Right!.wav"
+dest_files=["res://.godot/imported/All Right!.wav-7cd4ea75493d36ed6da38fe5d75ffe38.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

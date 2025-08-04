@@ -1,9 +1,8 @@
-[gd_scene load_steps=55 format=3 uid="uid://bla6qv3c21ega"]
+[gd_scene load_steps=54 format=3 uid="uid://bla6qv3c21ega"]
 
 [ext_resource type="PackedScene" uid="uid://bwbx371dcmy12" path="res://player.tscn" id="1_f3sb7"]
-[ext_resource type="Texture2D" uid="uid://bmucxdnl2q0iw" path="res://Assets/Floor/Materials/carpet_brown_01.png" id="1_tlwt5"]
-[ext_resource type="Texture2D" uid="uid://bm8sygppbq731" path="res://Assets/Bricks/Materials/brick_small_white_dirty.png" id="2_aqk2v"]
-[ext_resource type="Texture2D" uid="uid://cbnvynsoy6v5o" path="res://Assets/Bricks/Materials/brick_small_white_clean.png" id="3_aqk2v"]
+[ext_resource type="Texture2D" uid="uid://dq08fx4nqdhyx" path="res://Assets/Wolfenstein/GRAYROCKS.png" id="1_k3n1d"]
+[ext_resource type="Texture2D" uid="uid://ccau0dopiar2s" path="res://Assets/Wolfenstein/grey stone wall.png" id="2_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://d3ulg7pv8f0mn" path="res://Assets/Vehicles/volvo.blend" id="5_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ywyawvvvkwca" path="res://Assets/Vehicles/car_ramp_01.blend" id="6_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://3jju6hmeg431" path="res://Assets/Vehicles/bike_vintage (unfinished).blend" id="7_k3n1d"]
@@ -28,8 +27,8 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_036b0"]
-albedo_texture = ExtResource("1_tlwt5")
-uv1_scale = Vector3(30, 30, 30)
+albedo_texture = ExtResource("1_k3n1d")
+uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gv5m4"]
 
@@ -37,9 +36,9 @@ uv1_scale = Vector3(30, 30, 30)
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwbse"]
-albedo_texture = ExtResource("2_aqk2v")
+albedo_texture = ExtResource("2_2o6r5")
 albedo_texture_force_srgb = true
-uv1_scale = Vector3(50, 50, 50)
+uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_f3sb7"]
 
@@ -47,9 +46,9 @@ uv1_scale = Vector3(50, 50, 50)
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkg7o"]
-albedo_texture = ExtResource("2_aqk2v")
+albedo_texture = ExtResource("2_2o6r5")
 albedo_texture_force_srgb = true
-uv1_scale = Vector3(50, 50, 50)
+uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_tlwt5"]
 
@@ -57,21 +56,21 @@ uv1_scale = Vector3(50, 50, 50)
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gbfbk"]
-albedo_texture = ExtResource("1_tlwt5")
-uv1_scale = Vector3(30, 30, 30)
+albedo_texture = ExtResource("1_k3n1d")
+uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
-albedo_texture = ExtResource("3_aqk2v")
+albedo_texture = ExtResource("2_2o6r5")
 albedo_texture_force_srgb = true
-uv1_scale = Vector3(50, 50, 50)
+uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pkg7o"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
-albedo_texture = ExtResource("2_aqk2v")
+albedo_texture = ExtResource("2_2o6r5")
 albedo_texture_force_srgb = true
-uv1_scale = Vector3(50, 50, 50)
+uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fj7yv"]
 
@@ -79,14 +78,14 @@ uv1_scale = Vector3(50, 50, 50)
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ioo17"]
-albedo_texture = ExtResource("1_tlwt5")
-uv1_scale = Vector3(30, 30, 30)
+albedo_texture = ExtResource("1_k3n1d")
+uv1_scale = Vector3(20, 5, 1)
 uv2_scale = Vector3(0, 0, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wse8f"]
-albedo_texture = ExtResource("2_aqk2v")
+albedo_texture = ExtResource("2_2o6r5")
 albedo_texture_force_srgb = true
-uv1_scale = Vector3(50, 50, 50)
+uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gv5m4"]
 
@@ -97,21 +96,21 @@ points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ic0uy"]
-albedo_texture = ExtResource("2_aqk2v")
+albedo_texture = ExtResource("2_2o6r5")
 albedo_texture_force_srgb = true
-uv1_scale = Vector3(50, 50, 50)
+uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_k3n1d"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3n1d"]
-albedo_texture = ExtResource("1_tlwt5")
-uv1_scale = Vector3(30, 30, 30)
+albedo_texture = ExtResource("1_k3n1d")
+uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2o6r5"]
-albedo_texture = ExtResource("2_aqk2v")
+albedo_texture = ExtResource("2_2o6r5")
 albedo_texture_force_srgb = true
-uv1_scale = Vector3(50, 50, 50)
+uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2o6r5"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
@@ -120,33 +119,33 @@ points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hiqwa"]
-albedo_texture = ExtResource("3_aqk2v")
+albedo_texture = ExtResource("2_2o6r5")
 albedo_texture_force_srgb = true
-uv1_scale = Vector3(50, 50, 50)
+uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2u3nc"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ikiii"]
-albedo_texture = ExtResource("1_tlwt5")
-uv1_scale = Vector3(30, 30, 30)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70uel"]
+albedo_texture = ExtResource("1_k3n1d")
+uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbp6q"]
-albedo_texture = ExtResource("2_aqk2v")
+albedo_texture = ExtResource("2_2o6r5")
 albedo_texture_force_srgb = true
-uv1_scale = Vector3(50, 50, 50)
+uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_udxuc"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26xuy"]
-albedo_texture = ExtResource("1_tlwt5")
-uv1_scale = Vector3(30, 30, 30)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udxuc"]
+albedo_texture = ExtResource("1_k3n1d")
+uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bc84e"]
-albedo_texture = ExtResource("2_aqk2v")
+albedo_texture = ExtResource("2_2o6r5")
 albedo_texture_force_srgb = true
-uv1_scale = Vector3(50, 50, 50)
+uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ikiii"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
@@ -360,7 +359,7 @@ shape = SubResource("ConvexPolygonShape3D_2u3nc")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 2.28, 0, 80.263)
-material_override = SubResource("StandardMaterial3D_ikiii")
+material_override = SubResource("StandardMaterial3D_70uel")
 mesh = SubResource("PlaneMesh_gv5m4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D7"]
@@ -380,7 +379,7 @@ shape = SubResource("ConvexPolygonShape3D_udxuc")
 
 [node name="MeshInstance3D17" type="MeshInstance3D" parent="."]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 61.094, 0, 79.693)
-material_override = SubResource("StandardMaterial3D_26xuy")
+material_override = SubResource("StandardMaterial3D_udxuc")
 mesh = SubResource("PlaneMesh_gv5m4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D17"]
