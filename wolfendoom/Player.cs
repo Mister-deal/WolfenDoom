@@ -4,38 +4,49 @@ using System;
 public partial class Player : CharacterBody3D
 {
 	private Ui uiNode;
+	private GlobalWeapon globalWeapon;
 	
-	public const float Speed = 8.0f;
+	public const float Speed = 10.0f;
 	public const float JumpVelocity = 4.5f;
 	public const float TurnSpeed = 0.05f;
 	
 
 	public override void _Ready()
 	{
-	   // Assurez-vous que le chemin est correct.
-	   // Par exemple, "/root/world/ui".
 	   uiNode = GetNodeOrNull<Ui>("ui");
+	   globalWeapon = GetNode<GlobalWeapon>("/root/GlobalWeapon");
 
 	if (uiNode == null)
 	{
 		GD.PrintErr("Le nœud 'ui' n'a pas été trouvé en tant qu'enfant de 'player'.");
 	}
+	if (globalWeapon == null)
+		{
+			GD.PrintErr("L'Autoload GlobalWeapon n'a pas été trouvé !");
+		}
 	}
 	
 	public override void _Input(InputEvent @event)
 	{
-		// On vérifie si l'action "shoot" vient d'être pressée.
 		if (Input.IsActionJustPressed("shoot"))
 		{
 			GD.Print("Action d'attaque/de tir détectée !");
 
 			if (uiNode != null)
 			{
-				// On déclenche l'animation d'attaque/de tir.
 				uiNode.StartAttackAnimation();
 			}
 		}
+		
+		if (@event.IsActionPressed("cycle_weapon"))
+		{
+			if (globalWeapon != null)
+			{
+				globalWeapon.CycleNextWeapon();
+			}
+		}
 	}
+	
 	
 	public override void _PhysicsProcess(double delta)
 	{

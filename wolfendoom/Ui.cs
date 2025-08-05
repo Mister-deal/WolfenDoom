@@ -3,84 +3,165 @@ using System;
 
 public partial class Ui : CanvasLayer
 {
-	public int ammo = 10;
-	public string currentWeapon = "gun";
-	
-	 private AnimatedSprite2D weaponSprite;
-	
-	//private Label ammoLabel;
+	private GlobalWeapon globalWeapon;
+	private AnimatedSprite2D weaponSprite;
+	private bool isAttacking = false;
 
 	public override void _Ready()
-{
-	weaponSprite = GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");
+	{
+		weaponSprite = GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");
+		globalWeapon = GetNode<GlobalWeapon>("/root/GlobalWeapon");
 
-	if (weaponSprite == null)
-	{
-		GD.PrintErr("weaponSprite introuvable !");
-	}
-	else
-	{
-		GD.Print("weaponSprite trouvé !");
-		GD.Print("Animations disponibles : ");
-		foreach (var name in weaponSprite.SpriteFrames.GetAnimationNames())
+		if (globalWeapon == null)
 		{
-			GD.Print("- " + name);
+			GD.PrintErr("L'Autoload GlobalWeapon n'a pas été trouvé !");
+			return;
+		}
+		
+		if (globalWeapon != null)
+		{
+			// La connexion du signal est correcte.
+			globalWeapon.WeaponChanged += OnWeaponChanged;
+			
+			// L'appel direct de la méthode est corrigé avec un cast en int.
+			OnWeaponChanged((int)globalWeapon.currentWeapon);
+		}
+
+		if (weaponSprite == null)
+		{
+			GD.PrintErr("weaponSprite introuvable !");
+			return;
+		}
+		else
+		{
+			GD.Print("weaponSprite trouvé !");
+			GD.Print("Animations disponibles : ");
+			foreach (var name in weaponSprite.SpriteFrames.GetAnimationNames())
+			{
+				GD.Print("- " + name);
+			}
+		}
+		weaponSprite.AnimationFinished += OnAnimationFinished;
+	}
+	
+	public void StartAttackAnimation()
+	{
+		if (isAttacking)
+		{
+			GD.Print("Attaque déjà en cours");
+			return;
+		}
+
+		switch (globalWeapon.currentWeapon)
+		{
+			case GlobalWeapon.WeaponType.Bat:
+				isAttacking = true;
+				weaponSprite.Play("smash");
+				break;
+				
+			case GlobalWeapon.WeaponType.Gun:
+				if (globalWeapon.weapons[globalWeapon.currentWeapon].Ammo > 0)
+				{
+					isAttacking = true;
+					weaponSprite.Play("shoot");
+					globalWeapon.weapons[globalWeapon.currentWeapon].Ammo -= 1;
+				}
+				else
+				{
+					GD.Print("plus de munitions");
+				}
+				break;
+				
+			case GlobalWeapon.WeaponType.Machinegun:
+				if (globalWeapon.weapons[globalWeapon.currentWeapon].Ammo > 0)
+				{
+					isAttacking = true;
+					weaponSprite.Play("machinegun_shoot");
+					globalWeapon.weapons[globalWeapon.currentWeapon].Ammo -= 1;
+				}
+				else
+				{
+					GD.Print("plus de munitions");
+				}
+				break;
+				
+			case GlobalWeapon.WeaponType.Shotgun:
+				if (globalWeapon.weapons[globalWeapon.currentWeapon].Ammo > 0)
+				{
+					isAttacking = true;
+					weaponSprite.Play("shotgun_shoot");
+					globalWeapon.weapons[globalWeapon.currentWeapon].Ammo -= 1;
+				}
+				else
+				{
+					GD.Print("plus de munitions");
+				}
+				break;
+				
+				case GlobalWeapon.WeaponType.Rocketlauncher:
+				if (globalWeapon.weapons[globalWeapon.currentWeapon].Ammo > 0)
+				{
+					isAttacking = true;
+					weaponSprite.Play("rocketlauncher_shoot");
+					globalWeapon.weapons[globalWeapon.currentWeapon].Ammo -= 1;
+				}
+				else
+				{
+					GD.Print("plus de munitions");
+				}
+				break;
 		}
 	}
 
-	weaponSprite.AnimationFinished += OnAnimationFinished;
-}
-
-	private bool isAttacking = false; // ajouté tout en haut de la classe
-
-public void StartAttackAnimation()
-{
-	if (isAttacking)
+	private void OnAnimationFinished()
 	{
-		GD.Print("Attaque déjà en cours");
-		return;
-	}
+		isAttacking = false;
 
-	if (currentWeapon == "knife")
-	{
-		isAttacking = true;
-		weaponSprite.Play("stab");
-	}
-	else if (currentWeapon == "gun")
-	{
-		if (ammo > 0)
+		switch (globalWeapon.currentWeapon)
 		{
-			isAttacking = true;
-			weaponSprite.Play("shoot");
-			ammo -= 1;
-			//UpdateAmmoDisplay();
+			case GlobalWeapon.WeaponType.Bat:
+				weaponSprite.Play("bat_idle");
+				break;
+				
+			case GlobalWeapon.WeaponType.Gun:
+				weaponSprite.Play("gun_idle");
+				break;
+				
+			case GlobalWeapon.WeaponType.Machinegun:
+				weaponSprite.Play("machinegun_idle");
+				break;
+				
+			case GlobalWeapon.WeaponType.Shotgun:
+				weaponSprite.Play("shotgun_idle");
+				break;
+				
+			case GlobalWeapon.WeaponType.Rocketlauncher:
+				weaponSprite.Play("rocketlauncher_idle");
+				break;
 		}
 	}
-}
-
-private void OnAnimationFinished()
-{
-	GD.Print("Animation terminée !");
-	isAttacking = false;
-
-	if (currentWeapon == "knife")
+	
+	// La méthode OnWeaponChanged est correcte.
+	private void OnWeaponChanged(int newWeaponTypeInt)
 	{
-		weaponSprite.Play("knife_idle");
-	}
-	else if (currentWeapon == "gun")
-	{
-		weaponSprite.Play("gun_idle");
-	}
-}
-/*
-// Met à jour l'affichage des munitions sur l'UI.
-	private void UpdateAmmoDisplay()
-	{
-		if (ammoLabel != null)
+		GlobalWeapon.WeaponType newWeaponType = (GlobalWeapon.WeaponType)newWeaponTypeInt;
+		switch (newWeaponType)
 		{
-			ammoLabel.Text = "AMMO: " + ammo.ToString();
+			case GlobalWeapon.WeaponType.Bat:
+				weaponSprite.Play("bat_idle");
+				break;
+			case GlobalWeapon.WeaponType.Gun:
+				weaponSprite.Play("gun_idle");
+				break;
+			case GlobalWeapon.WeaponType.Machinegun:
+				weaponSprite.Play("machinegun_idle");
+				break;
+			case GlobalWeapon.WeaponType.Shotgun:
+				weaponSprite.Play("shotgun_idle");
+				break;
+			case GlobalWeapon.WeaponType.Rocketlauncher:
+				weaponSprite.Play("rocketlauncher_idle");
+				break;
 		}
 	}
-*/
-
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bla6qv3c21ega"]
+[gd_scene load_steps=53 format=3 uid="uid://bla6qv3c21ega"]
 
 [ext_resource type="PackedScene" uid="uid://bwbx371dcmy12" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://dq08fx4nqdhyx" path="res://Assets/Wolfenstein/GRAYROCKS.png" id="1_k3n1d"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://3jju6hmeg431" path="res://Assets/Vehicles/bike_vintage (unfinished).blend" id="7_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://ch14kqi5wtgnx" path="res://Assets/Vehicles/car_parts_brakes (unfinished).blend" id="8_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://bcmtfd8lit2wo" path="res://Assets/Walls/wall_pieces_wood_planks_2.blend" id="9_70uel"]
-[ext_resource type="PackedScene" uid="uid://do1t0bpwv8gaw" path="res://Assets/Windows/window_frame_green.blend" id="10_hiqwa"]
 [ext_resource type="PackedScene" uid="uid://b2v6vqrlxmhjh" path="res://Assets/Wood/Wood_Pallet.blend" id="11_2o6r5"]
 [ext_resource type="Texture2D" uid="uid://cdtot3wrx2may" path="res://Assets/Units/textures/generator.png" id="12_70uel"]
 [ext_resource type="Texture2D" uid="uid://d1d87paa5wl0y" path="res://Assets/Units/Materials/fridge_drinks_01.jpg" id="13_hiqwa"]
@@ -164,6 +163,7 @@ uv1_scale = Vector3(2.1, 2.1, 2.1)
 [sub_resource type="BoxMesh" id="BoxMesh_il2jm"]
 
 [node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.0914, 0, -91.6793)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_aqk2v")
@@ -457,9 +457,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3136, 5953.87, 93.5116)
 [node name="wall_pieces_wood_planks_2" parent="." instance=ExtResource("9_70uel")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -11.5802, 6.19469, -7.04828)
 
-[node name="window_frame_green2" parent="." instance=ExtResource("10_hiqwa")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -11.429, 6.18055, -7.98021)
-
 [node name="Wood_Pallet" parent="." instance=ExtResource("11_2o6r5")]
 transform = Transform3D(2.95264, 0, -0.530945, 0, 3, 0, 0.530945, 0, 2.95264, 81.1444, 0.188673, 66.7499)
 
@@ -491,7 +488,7 @@ material_override = SubResource("StandardMaterial3D_2u3nc")
 mesh = SubResource("BoxMesh_udxuc")
 
 [node name="MeshInstance3D26" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.144335, 0, -9.99896, 0, 10, 0, 9.99896, 0, 0.144335, -22.1898, 5.31033, 101.232)
+transform = Transform3D(0.144336, 0, -9.99896, 0, 10, 0, 9.99896, 0, 0.144336, -22.1898, 5.31033, 101.232)
 material_override = SubResource("StandardMaterial3D_2u3nc")
 mesh = SubResource("BoxMesh_udxuc")
 
