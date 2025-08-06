@@ -1,0 +1,139 @@
+[gd_scene load_steps=26 format=3 uid="uid://eoth6sluuob"]
+
+[ext_resource type="Texture2D" uid="uid://8cde6e80dob5" path="res://Assets/Monster/Skull/skulc1.png" id="1_bw0wq"]
+[ext_resource type="Texture2D" uid="uid://ctv7sf22bv310" path="res://Assets/Monster/Skull/skuld1.png" id="2_qu8h8"]
+[ext_resource type="Texture2D" uid="uid://dj54ofokm4ud8" path="res://Assets/Monster/Skull/skulf0.png" id="3_3upf5"]
+[ext_resource type="Texture2D" uid="uid://cvptg505bvkou" path="res://Assets/Monster/Skull/skulg0.png" id="4_56ta0"]
+[ext_resource type="Texture2D" uid="uid://d4b4qt3128l47" path="res://Assets/Monster/Skull/skulh0.png" id="5_c5h54"]
+[ext_resource type="Texture2D" uid="uid://ops0ya3mbgpm" path="res://Assets/Monster/Skull/skuli0.png" id="6_uq1sy"]
+[ext_resource type="Texture2D" uid="uid://c0ypkm6o7dll8" path="res://Assets/Monster/Skull/skulj0.png" id="7_4lahx"]
+[ext_resource type="Texture2D" uid="uid://dheothgp8ha" path="res://Assets/Monster/Skull/skulk0.png" id="8_3duwg"]
+[ext_resource type="Texture2D" uid="uid://oo3r1xfvv6tb" path="res://Assets/Monster/Skull/skula1.png" id="9_ayfud"]
+[ext_resource type="Texture2D" uid="uid://cj6qb7f3qfcw0" path="res://Assets/Monster/Skull/skulb1.png" id="10_doiov"]
+[ext_resource type="Texture2D" uid="uid://jv78tusqihw" path="res://Assets/Monster/Skull/skule1.png" id="11_cl1y8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7rgc"]
+atlas = ExtResource("1_bw0wq")
+region = Rect2(0, 0, 34, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdav3"]
+atlas = ExtResource("2_qu8h8")
+region = Rect2(0, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpbtr"]
+atlas = ExtResource("3_3upf5")
+region = Rect2(0, 0, 38, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgdfx"]
+atlas = ExtResource("4_56ta0")
+region = Rect2(0, 0, 32, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qku5p"]
+atlas = ExtResource("5_c5h54")
+region = Rect2(0, 0, 41, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1fjw"]
+atlas = ExtResource("6_uq1sy")
+region = Rect2(0, 0, 47, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5wqg"]
+atlas = ExtResource("7_4lahx")
+region = Rect2(0, 0, 55, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgro5"]
+atlas = ExtResource("8_3duwg")
+region = Rect2(0, 0, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wg26"]
+atlas = ExtResource("11_cl1y8")
+region = Rect2(0, 0, 34, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18rq2"]
+atlas = ExtResource("9_ayfud")
+region = Rect2(0, 0, 30, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccdwq"]
+atlas = ExtResource("9_ayfud")
+region = Rect2(0, 0, 30, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jgdh"]
+atlas = ExtResource("10_doiov")
+region = Rect2(0, 0, 30, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qskgw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7rgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdav3")
+}],
+"loop": true,
+"name": &"attack_0_deg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpbtr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgdfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qku5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1fjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5wqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgro5")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wg26")
+}],
+"loop": true,
+"name": &"hit_0_deg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18rq2")
+}],
+"loop": true,
+"name": &"idle_0_deg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccdwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jgdh")
+}],
+"loop": true,
+"name": &"walk_0_deg",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xaro"]
+
+[node name="skull" type="CharacterBody3D"]
+motion_mode = 1
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.57746, 0)
+sprite_frames = SubResource("SpriteFrames_qskgw")
+animation = &"idle_0_deg"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40264, 0)
+shape = SubResource("CapsuleShape3D_7xaro")
