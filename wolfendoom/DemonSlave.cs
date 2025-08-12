@@ -1,43 +1,66 @@
 using Godot;
 using System;
 
-public partial class DemonSlave : CharacterBody3D
+public partial class DemonSlave : Enemy_base
 {
-	public const float Speed = 5.0f;
-	public const float JumpVelocity = 4.5f;
+	[Export] public float attackDamage = 10.0f;
+	[Export] public float hitStunTime = 0.5f;
 
-	public override void _PhysicsProcess(double delta)
+	protected AudioStreamPlayer3D audioPlayer;
+	private Timer hitStunTimer;
+	
+	public override void _Ready()
 	{
-		Vector3 velocity = Velocity;
+		// Appelez toujours la méthode _Ready de la classe de base !
+		base._Ready(); 
+		
+		// Initialisez les nœuds spécifiques au DemonSlave
+		audioPlayer = GetNode<AudioStreamPlayer3D>("AudioStreamPlayer3D");
 
-		// Add the gravity.
-		if (!IsOnFloor())
-		{
-			velocity += GetGravity() * (float)delta;
-		}
+		hitStunTimer = new Timer();
+		hitStunTimer.WaitTime = hitStunTime;
+		hitStunTimer.OneShot = true;
+		AddChild(hitStunTimer);
+		hitStunTimer.Timeout += () => {
+			currentState = EnemyState.Idle;
+		};
+	}
 
-		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
-		{
-			velocity.Y = JumpVelocity;
-		}
+	protected override void Attack()
+	{
+		base.Attack();
 
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
-		if (direction != Vector3.Zero)
-		{
-			velocity.X = direction.X * Speed;
-			velocity.Z = direction.Z * Speed;
-		}
-		else
-		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
-			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, Speed);
-		}
+		GD.Print("DemonSlave lance une attaque !");
 
-		Velocity = velocity;
-		MoveAndSlide();
+		if (GlobalPosition.DistanceTo(player.GlobalPosition) <= attackRange)
+		{
+			// audioPlayer.Play("attack_sound");
+			
+			// if (player is PlayerController playerScript)
+			// {
+			//     playerScript.TakeDamage(attackDamage);
+			// }
+		}
+	}
+
+	public override void Die()
+	{
+		base.Die();
+		
+		GD.Print("Le DemonSlave a été vaincu !");
+
+	}
+	
+	// Nouvelle méthode pour gérer les dégâts subis par le monstre
+	public void TakeDamage()
+	{
+		if (dead) return;
+
+		currentState = EnemyState.Hit;
+		
+		hitStunTimer.Start();
+		
+		// audioPlayer.Play("hit_sound");
+
 	}
 }

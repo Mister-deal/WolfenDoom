@@ -1,5 +1,6 @@
-[gd_scene load_steps=106 format=3 uid="uid://da66kmgltvxnm"]
+[gd_scene load_steps=108 format=3 uid="uid://da66kmgltvxnm"]
 
+[ext_resource type="Script" uid="uid://dx3npln4ej5ut" path="res://DemonSlave.cs" id="1_6ovrh"]
 [ext_resource type="Texture2D" uid="uid://bs2m3cufyu8tg" path="res://Assets/Monster/Lobotomate/posse1.png" id="1_scun0"]
 [ext_resource type="Texture2D" uid="uid://dr3nmcaph0b65" path="res://Assets/Monster/Lobotomate/possf1.png" id="2_5f6fo"]
 [ext_resource type="Texture2D" uid="uid://dd62sdlrlmirf" path="res://Assets/Monster/Lobotomate/possh0.png" id="3_7610s"]
@@ -543,7 +544,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStream" id="AudioStream_6ovrh"]
+
 [node name="Demon_slave" type="CharacterBody3D"]
+script = ExtResource("1_6ovrh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_obg8s")
@@ -552,3 +556,6 @@ shape = SubResource("CapsuleShape3D_obg8s")
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.26193, 0)
 sprite_frames = SubResource("SpriteFrames_8j24l")
 animation = &"attack_135_deg"
+
+[node name="AudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStream_6ovrh")

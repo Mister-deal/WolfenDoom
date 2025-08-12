@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Player : CharacterBody3D
+public partial class Player : Enemy_base
 {
 	private Ui uiNode;
 	private GlobalWeapon globalWeapon;

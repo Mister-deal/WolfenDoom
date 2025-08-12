@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://cgx560y3kl6fl"]
+[gd_scene load_steps=30 format=3 uid="uid://cgx560y3kl6fl"]
 
 [ext_resource type="Texture2D" uid="uid://c5vnr5s2ijjm0" path="res://Assets/Monster/SquidLike monster/skelj1.png" id="1_15aeb"]
+[ext_resource type="Script" uid="uid://d0l358puyw4su" path="res://Skel.cs" id="1_c8sfj"]
 [ext_resource type="Texture2D" uid="uid://cvgpmb2y81mu6" path="res://Assets/Monster/SquidLike monster/skelg1.png" id="2_c8sfj"]
 [ext_resource type="Texture2D" uid="uid://cgirik8os7f7j" path="res://Assets/Monster/SquidLike monster/skelh1.png" id="3_qykd3"]
 [ext_resource type="Texture2D" uid="uid://d0cdo0ycpr2n8" path="res://Assets/Monster/SquidLike monster/skelm0.png" id="4_xmnms"]
@@ -146,7 +147,8 @@ animations = [{
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ttchp"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="skel" type="CharacterBody3D"]
+script = ExtResource("1_c8sfj")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.17416, 0)
@@ -156,3 +158,5 @@ animation = &"idle_0_deg"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08459, 0)
 shape = SubResource("CapsuleShape3D_ttchp")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

@@ -125,3 +125,5 @@ animation = &"idle"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07938, 0)
 shape = SubResource("CapsuleShape3D_nuacr")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

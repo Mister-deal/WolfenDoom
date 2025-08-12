@@ -1,5 +1,6 @@
-[gd_scene load_steps=106 format=3 uid="uid://csoiva5xwd8nj"]
+[gd_scene load_steps=107 format=3 uid="uid://csoiva5xwd8nj"]
 
+[ext_resource type="Script" uid="uid://2a1k3wu5nd5" path="res://Lobotomite.cs" id="1_b5cof"]
 [ext_resource type="Texture2D" uid="uid://crj43x3svvlr1" path="res://Assets/Monster/Radicalized being/spose1.png" id="1_cghwy"]
 [ext_resource type="Texture2D" uid="uid://brc44g1wlosp7" path="res://Assets/Monster/Radicalized being/sposf1.png" id="2_cvgcy"]
 [ext_resource type="Texture2D" uid="uid://dvr3elcmxpao5" path="res://Assets/Monster/Radicalized being/spose4e6.png" id="3_k8ss8"]
@@ -543,7 +544,8 @@ animations = [{
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vckl2"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="lobotomite" type="CharacterBody3D"]
+script = ExtResource("1_b5cof")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.948166, 0)
@@ -554,3 +556,5 @@ frame_progress = 0.334522
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02164, 0)
 shape = SubResource("CapsuleShape3D_vckl2")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
