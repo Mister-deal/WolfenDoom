@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://c7tc7v1xodqer"]
+[gd_scene load_steps=74 format=3 uid="uid://c7tc7v1xodqer"]
 
 [ext_resource type="Script" uid="uid://cilp03yx1s4ne" path="res://Ui.cs" id="1_m6e0p"]
 [ext_resource type="Texture2D" uid="uid://sq4vvrtv502t" path="res://Assets/Weapons/Glock/GLOCK_0001.png" id="2_w05v2"]
@@ -31,6 +31,12 @@
 [ext_resource type="Texture2D" uid="uid://kx8srp65uel6" path="res://Assets/Weapons/Bat/Bat_0004.png" id="29_75fsn"]
 [ext_resource type="Texture2D" uid="uid://ikvq0jjunuj1" path="res://Assets/Weapons/Bat/Bat_0005.png" id="30_1xskv"]
 [ext_resource type="Texture2D" uid="uid://b7pkmfxgbr68u" path="res://Assets/Weapons/Bat/Bat_0006.png" id="31_cb22p"]
+[ext_resource type="Texture2D" uid="uid://fycw8qbjxubn" path="res://Assets/Face/stfdead0.png" id="32_qvlql"]
+[ext_resource type="Texture2D" uid="uid://ccgeqpt6birkc" path="res://Assets/Face/stfevl0.png" id="33_gqeas"]
+[ext_resource type="Texture2D" uid="uid://1ywbcgjssxua" path="res://Assets/Face/stfevl4.png" id="34_2ydj3"]
+[ext_resource type="Texture2D" uid="uid://dl8edcyn6ygxp" path="res://Assets/Face/stfevl2.png" id="35_u1fh6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hqsqr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yrl65"]
 atlas = ExtResource("3_v463t")
@@ -295,25 +301,107 @@ animations = [{
 "speed": 18.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gg1n"]
+atlas = ExtResource("32_qvlql")
+region = Rect2(0, 0, 24, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n3bm"]
+atlas = ExtResource("33_gqeas")
+region = Rect2(0, 0, 24, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nph28"]
+atlas = ExtResource("34_2ydj3")
+region = Rect2(0, 0, 24, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgnrw"]
+atlas = ExtResource("35_u1fh6")
+region = Rect2(0, 0, 24, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgsgi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gg1n")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4n3bm")
+}],
+"loop": true,
+"name": &"full_health",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nph28")
+}],
+"loop": true,
+"name": &"low_health",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgnrw")
+}],
+"loop": true,
+"name": &"mid_health",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qvlql"]
+
 [node name="ui" type="CanvasLayer"]
 script = ExtResource("1_m6e0p")
 
+[node name="Label" type="Label" parent="."]
+offset_left = 176.0
+offset_top = 532.0
+offset_right = 234.0
+offset_bottom = 580.0
+text = "100"
+label_settings = SubResource("LabelSettings_hqsqr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(577.5, 275)
-scale = Vector2(4.49609, 2.10156)
+position = Vector2(549.125, 293)
+scale = Vector2(2.6084, 2.79394)
 sprite_frames = SubResource("SpriteFrames_y4yjw")
-animation = &"bat_idle"
+animation = &"shotgun_shoot"
 autoplay = "machinegun_idle"
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -577.0
-offset_top = -106.0
-offset_right = 576.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.357606, 0, 0.113392, 1)
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(91, 545)
+scale = Vector2(6.47917, 6.53333)
+sprite_frames = SubResource("SpriteFrames_vgsgi")
+animation = &"full_health"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qvlql")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 176.0
+offset_top = 513.0
+offset_right = 245.0
+offset_bottom = 536.0
+text = "HEALTH"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 181.0
+offset_top = 577.0
+offset_right = 237.0
+offset_bottom = 617.0
+text = "Armor"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 188.0
+offset_top = 606.0
+offset_right = 228.0
+offset_bottom = 629.0
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1

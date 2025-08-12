@@ -1,15 +1,24 @@
-[gd_scene load_steps=26 format=3 uid="uid://eoth6sluuob"]
+[gd_scene load_steps=43 format=3 uid="uid://eoth6sluuob"]
 
 [ext_resource type="Texture2D" uid="uid://8cde6e80dob5" path="res://Assets/Monster/Skull/skulc1.png" id="1_bw0wq"]
+[ext_resource type="Script" uid="uid://bvqas0xhj27kc" path="res://Skull.cs" id="1_doiov"]
 [ext_resource type="Texture2D" uid="uid://ctv7sf22bv310" path="res://Assets/Monster/Skull/skuld1.png" id="2_qu8h8"]
 [ext_resource type="Texture2D" uid="uid://dj54ofokm4ud8" path="res://Assets/Monster/Skull/skulf0.png" id="3_3upf5"]
+[ext_resource type="Texture2D" uid="uid://bnb8ps8poanpc" path="res://Assets/Monster/Skull/skulc6c4.png" id="3_ayfud"]
 [ext_resource type="Texture2D" uid="uid://cvptg505bvkou" path="res://Assets/Monster/Skull/skulg0.png" id="4_56ta0"]
+[ext_resource type="Texture2D" uid="uid://d3le1qowhvx68" path="res://Assets/Monster/Skull/skuld6d4.png" id="4_doiov"]
 [ext_resource type="Texture2D" uid="uid://d4b4qt3128l47" path="res://Assets/Monster/Skull/skulh0.png" id="5_c5h54"]
+[ext_resource type="Texture2D" uid="uid://bfss8tdc8yap3" path="res://Assets/Monster/Skull/skulc5.png" id="5_cl1y8"]
+[ext_resource type="Texture2D" uid="uid://ofbqcd6mp2ot" path="res://Assets/Monster/Skull/skuld5.png" id="6_ndxj6"]
 [ext_resource type="Texture2D" uid="uid://ops0ya3mbgpm" path="res://Assets/Monster/Skull/skuli0.png" id="6_uq1sy"]
 [ext_resource type="Texture2D" uid="uid://c0ypkm6o7dll8" path="res://Assets/Monster/Skull/skulj0.png" id="7_4lahx"]
+[ext_resource type="Texture2D" uid="uid://bsj451y6v76c7" path="res://Assets/Monster/Skull/skulc8c2.png" id="7_6uyg4"]
 [ext_resource type="Texture2D" uid="uid://dheothgp8ha" path="res://Assets/Monster/Skull/skulk0.png" id="8_3duwg"]
+[ext_resource type="Texture2D" uid="uid://s0xaanfva28l" path="res://Assets/Monster/Skull/skuld8d2.png" id="8_parpl"]
+[ext_resource type="Texture2D" uid="uid://dtjm720vsgq67" path="res://Assets/Monster/Skull/skulc7c3.png" id="9_0xsfg"]
 [ext_resource type="Texture2D" uid="uid://oo3r1xfvv6tb" path="res://Assets/Monster/Skull/skula1.png" id="9_ayfud"]
 [ext_resource type="Texture2D" uid="uid://cj6qb7f3qfcw0" path="res://Assets/Monster/Skull/skulb1.png" id="10_doiov"]
+[ext_resource type="Texture2D" uid="uid://dsponu2u2751j" path="res://Assets/Monster/Skull/skuld7d3.png" id="10_sjl4w"]
 [ext_resource type="Texture2D" uid="uid://jv78tusqihw" path="res://Assets/Monster/Skull/skule1.png" id="11_cl1y8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o7rgc"]
@@ -19,6 +28,38 @@ region = Rect2(0, 0, 34, 37)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdav3"]
 atlas = ExtResource("2_qu8h8")
 region = Rect2(0, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igs0b"]
+atlas = ExtResource("3_ayfud")
+region = Rect2(0, 0, 38, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv8cq"]
+atlas = ExtResource("4_doiov")
+region = Rect2(0, 0, 35, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03ggu"]
+atlas = ExtResource("5_cl1y8")
+region = Rect2(0, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43qa2"]
+atlas = ExtResource("6_ndxj6")
+region = Rect2(0, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj7xt"]
+atlas = ExtResource("7_6uyg4")
+region = Rect2(0, 0, 34, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iosgq"]
+atlas = ExtResource("8_parpl")
+region = Rect2(0, 0, 35, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8koy"]
+atlas = ExtResource("9_0xsfg")
+region = Rect2(0, 0, 32, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js8ra"]
+atlas = ExtResource("10_sjl4w")
+region = Rect2(0, 0, 34, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jpbtr"]
 atlas = ExtResource("3_3upf5")
@@ -75,6 +116,50 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_igs0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv8cq")
+}],
+"loop": true,
+"name": &"attack_135_deg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03ggu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43qa2")
+}],
+"loop": true,
+"name": &"attack_180_deg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj7xt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iosgq")
+}],
+"loop": true,
+"name": &"attack_45_deg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8koy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js8ra")
+}],
+"loop": true,
+"name": &"attack_90_deg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_jpbtr")
 }, {
 "duration": 1.0,
@@ -104,12 +189,52 @@ animations = [{
 "name": &"hit_0_deg",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"hit_135_deg",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hit_180_deg",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hit_45_deg",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hit_90_deg",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_18rq2")
 }],
 "loop": true,
 "name": &"idle_0_deg",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_135_deg",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_180_deg",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_45_deg",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_90_deg",
 "speed": 5.0
 }, {
 "frames": [{
@@ -122,17 +247,40 @@ animations = [{
 "loop": true,
 "name": &"walk_0_deg",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_135_deg",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_180_deg",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_45_deg",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_90_deg",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xaro"]
 
 [node name="skull" type="CharacterBody3D"]
 motion_mode = 1
+script = ExtResource("1_doiov")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.57746, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.49143, 0)
 sprite_frames = SubResource("SpriteFrames_qskgw")
-animation = &"idle_0_deg"
+animation = &"attack_0_deg"
+frame = 1
+frame_progress = 0.32058
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40264, 0)

@@ -551,5 +551,4 @@ shape = SubResource("CapsuleShape3D_obg8s")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.26193, 0)
 sprite_frames = SubResource("SpriteFrames_8j24l")
-animation = &"walk_0_deg"
-frame_progress = 0.371997
+animation = &"attack_135_deg"

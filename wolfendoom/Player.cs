@@ -5,16 +5,23 @@ public partial class Player : CharacterBody3D
 {
 	private Ui uiNode;
 	private GlobalWeapon globalWeapon;
+	private RayCast3D raycast;
 	
-	public const float Speed = 10.0f;
+	public const float Speed = 20.0f;
 	public const float JumpVelocity = 4.5f;
-	public const float TurnSpeed = 0.05f;
+	public const float TurnSpeed = 0.10f;
+	
+	private Node3D muzzlePoint;
+	
 	
 
 	public override void _Ready()
 	{
+		AddToGroup("player");
 	   uiNode = GetNodeOrNull<Ui>("ui");
 	   globalWeapon = GetNode<GlobalWeapon>("/root/GlobalWeapon");
+	 	raycast = GetNode<RayCast3D>("Camera3D/RayCast3D");
+		muzzlePoint = GetNode<Node3D>("Camera3D/MuzzlePoint3D");
 
 	if (uiNode == null)
 	{

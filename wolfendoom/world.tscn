@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bla6qv3c21ega"]
+[gd_scene load_steps=54 format=3 uid="uid://bla6qv3c21ega"]
 
 [ext_resource type="PackedScene" uid="uid://bwbx371dcmy12" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://dq08fx4nqdhyx" path="res://Assets/Wolfenstein/GRAYROCKS.png" id="1_k3n1d"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bcmtfd8lit2wo" path="res://Assets/Walls/wall_pieces_wood_planks_2.blend" id="9_70uel"]
 [ext_resource type="PackedScene" uid="uid://b2v6vqrlxmhjh" path="res://Assets/Wood/Wood_Pallet.blend" id="11_2o6r5"]
 [ext_resource type="Texture2D" uid="uid://cdtot3wrx2may" path="res://Assets/Units/textures/generator.png" id="12_70uel"]
+[ext_resource type="PackedScene" uid="uid://jm64ych6q5eq" path="res://nazi.tscn" id="12_k3n1d"]
 [ext_resource type="Texture2D" uid="uid://d1d87paa5wl0y" path="res://Assets/Units/Materials/fridge_drinks_01.jpg" id="13_hiqwa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fj7yv"]
@@ -506,3 +507,6 @@ mesh = SubResource("BoxMesh_il2jm")
 transform = Transform3D(-0.0294084, 0, 2.99995, 0, 8, 0, -4.99991, 0, -0.017645, -24.6441, 4.30055, 141.448)
 material_override = SubResource("StandardMaterial3D_wukud")
 mesh = SubResource("BoxMesh_il2jm")
+
+[node name="nazi" parent="." instance=ExtResource("12_k3n1d")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 37.5577, 0, 143.844)
