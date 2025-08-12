@@ -20,10 +20,8 @@ public partial class Ui : CanvasLayer
 		
 		if (globalWeapon != null)
 		{
-			// La connexion du signal est correcte.
 			globalWeapon.WeaponChanged += OnWeaponChanged;
 			
-			// L'appel direct de la méthode est corrigé avec un cast en int.
 			OnWeaponChanged((int)globalWeapon.currentWeapon);
 		}
 
@@ -141,7 +139,6 @@ public partial class Ui : CanvasLayer
 		}
 	}
 	
-	// La méthode OnWeaponChanged est correcte.
 	private void OnWeaponChanged(int newWeaponTypeInt)
 	{
 		GlobalWeapon.WeaponType newWeaponType = (GlobalWeapon.WeaponType)newWeaponTypeInt;

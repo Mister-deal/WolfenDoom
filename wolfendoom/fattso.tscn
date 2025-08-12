@@ -383,12 +383,13 @@ animations = [{
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hn1sb"]
 
 [node name="fattso" type="CharacterBody3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 script = ExtResource("1_y0ud3")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.31819, 0)
 sprite_frames = SubResource("SpriteFrames_mxn4l")
-animation = &"hit_180_deg"
+animation = &"idle_0_deg"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15669, 0)

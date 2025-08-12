@@ -272,6 +272,7 @@ animations = [{
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xaro"]
 
 [node name="skull" type="CharacterBody3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 motion_mode = 1
 script = ExtResource("1_doiov")
 

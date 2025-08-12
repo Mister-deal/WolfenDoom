@@ -167,6 +167,7 @@ animations = [{
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5oxar"]
 
 [node name="leech" type="CharacterBody3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 script = ExtResource("1_k6g2h")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]

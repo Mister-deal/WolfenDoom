@@ -27,11 +27,11 @@ public partial class Enemy_base : CharacterBody3D
 
 	protected void OnAnimationFinished()
 	{
-		if (animatedSprite.Animation.Contains("attack"))
-		{
-			isAttacking = false;
-			currentState = EnemyState.Idle; 
-		}
+		if (animatedSprite.Animation.ToString().Contains("attack"))
+	{
+		isAttacking = false;
+		currentState = EnemyState.Idle;
+	}
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -68,7 +68,6 @@ public partial class Enemy_base : CharacterBody3D
 
 		UpdateSpriteFacing(direction);
 
-		// Déplacement de l'ennemi
 		Vector3 currentVelocity = Velocity;
 		currentVelocity.X = direction.X * speed;
 		currentVelocity.Z = direction.Z * speed;
@@ -99,7 +98,6 @@ public partial class Enemy_base : CharacterBody3D
 
 	protected void UpdateSpriteFacing(Vector3 direction)
 	{
-		// Ne fait rien si l'ennemi est déjà en train de mourir
 		if (currentState == EnemyState.Death)
 		{
 			animatedSprite.Play("death_0_deg");
@@ -108,7 +106,6 @@ public partial class Enemy_base : CharacterBody3D
 
 		string baseAnimName = "";
 		
-		// Détermine l'animation de base en fonction de l'état
 		switch (currentState)
 		{
 			case EnemyState.Attack:
@@ -149,7 +146,7 @@ public partial class Enemy_base : CharacterBody3D
 		if (angle >= -112.5f && angle < -67.5f) { return "_90_deg"; }
 		if (angle >= -157.5f && angle < -112.5f) { return "_135_deg"; }
 		
-		return "_0_deg"; // Par défaut
+		return "_0_deg";
 	}
 	
 	protected bool GetFlipH(float angle)
@@ -157,12 +154,9 @@ public partial class Enemy_base : CharacterBody3D
 		return angle < -22.5f && angle > -157.5f;
 	}
 	
-	// Ajoutez une méthode Hit() pour gérer la prise de dégâts
 	public void Hit()
 	{
 		currentState = EnemyState.Hit;
-		// Vous devrez implémenter une logique pour revenir à l'état Idle/Walk
-		// après l'animation "hit", par exemple avec un Timer ou en surveillant
-		// la fin de l'animation comme pour l'attaque.
+		
 	}
 }

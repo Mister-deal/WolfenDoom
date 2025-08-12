@@ -51,7 +51,6 @@ public partial class DemonSlave : Enemy_base
 
 	}
 	
-	// Nouvelle méthode pour gérer les dégâts subis par le monstre
 	public void TakeDamage()
 	{
 		if (dead) return;

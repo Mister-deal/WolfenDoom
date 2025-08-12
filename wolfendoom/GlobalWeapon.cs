@@ -10,7 +10,6 @@ public class Weapon
 
 public partial class GlobalWeapon : Node
 {
-	// Le délégué a été corrigé pour passer un int, ce qui est compatible avec le signal.
 	[Signal]
 	public delegate void WeaponChangedEventHandler(int newWeaponType);
 	
@@ -35,7 +34,6 @@ public partial class GlobalWeapon : Node
 			currentWeapon = newWeapon;
 			GD.Print("Arme changée : " + weapons[currentWeapon].Name);
 			
-			// Le signal est émis en convertissant l'enum en int.
 			EmitSignal(SignalName.WeaponChanged, (int)currentWeapon);
 		}
 	}

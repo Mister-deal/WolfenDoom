@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://c7tc7v1xodqer"]
+[gd_scene load_steps=75 format=3 uid="uid://c7tc7v1xodqer"]
 
 [ext_resource type="Script" uid="uid://cilp03yx1s4ne" path="res://Ui.cs" id="1_m6e0p"]
 [ext_resource type="Texture2D" uid="uid://sq4vvrtv502t" path="res://Assets/Weapons/Glock/GLOCK_0001.png" id="2_w05v2"]
@@ -35,6 +35,8 @@
 [ext_resource type="Texture2D" uid="uid://ccgeqpt6birkc" path="res://Assets/Face/stfevl0.png" id="33_gqeas"]
 [ext_resource type="Texture2D" uid="uid://1ywbcgjssxua" path="res://Assets/Face/stfevl4.png" id="34_2ydj3"]
 [ext_resource type="Texture2D" uid="uid://dl8edcyn6ygxp" path="res://Assets/Face/stfevl2.png" id="35_u1fh6"]
+[ext_resource type="Texture2D" uid="uid://dv8wb4xmxodr" path="res://Assets/health.png" id="36_gqeas"]
+[ext_resource type="Texture2D" uid="uid://bx6yae6615xx7" path="res://Assets/EcXGx0EU4AEb9S7.png" id="37_2ydj3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hqsqr"]
 
@@ -352,56 +354,61 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qvlql"]
-
 [node name="ui" type="CanvasLayer"]
 script = ExtResource("1_m6e0p")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 176.0
-offset_top = 532.0
-offset_right = 234.0
-offset_bottom = 580.0
+[node name="health_number" type="Label" parent="."]
+offset_left = 183.0
+offset_top = 497.0
+offset_right = 230.0
+offset_bottom = 536.0
 text = "100"
 label_settings = SubResource("LabelSettings_hqsqr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Damage_Action" type="AnimatedSprite2D" parent="."]
 position = Vector2(549.125, 293)
 scale = Vector2(2.6084, 2.79394)
 sprite_frames = SubResource("SpriteFrames_y4yjw")
 animation = &"shotgun_shoot"
 autoplay = "machinegun_idle"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(91, 545)
-scale = Vector2(6.47917, 6.53333)
+[node name="character_head_status" type="AnimatedSprite2D" parent="."]
+position = Vector2(91, 532)
+scale = Vector2(6.94792, 7.23333)
 sprite_frames = SubResource("SpriteFrames_vgsgi")
 animation = &"full_health"
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_qvlql")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 176.0
-offset_top = 513.0
-offset_right = 245.0
-offset_bottom = 536.0
+[node name="health_label" type="RichTextLabel" parent="."]
+offset_left = 173.0
+offset_top = 478.0
+offset_right = 242.0
+offset_bottom = 501.0
 text = "HEALTH"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = 181.0
-offset_top = 577.0
-offset_right = 237.0
-offset_bottom = 617.0
-text = "Armor"
+[node name="armor_label" type="RichTextLabel" parent="."]
+offset_left = 178.0
+offset_top = 591.0
+offset_right = 246.0
+offset_bottom = 613.0
+text = "ARMOR"
 
-[node name="Label2" type="Label" parent="."]
+[node name="armor_number" type="Label" parent="."]
 offset_left = 188.0
-offset_top = 606.0
+offset_top = 618.0
 offset_right = 228.0
-offset_bottom = 629.0
+offset_bottom = 641.0
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HEALTH" type="Sprite2D" parent="."]
+position = Vector2(205.813, 442)
+scale = Vector2(0.137528, 0.204947)
+texture = ExtResource("36_gqeas")
+
+[node name="ARMOR" type="Sprite2D" parent="."]
+position = Vector2(210.563, 561.313)
+scale = Vector2(0.130914, 0.214216)
+texture = ExtResource("37_2ydj3")
